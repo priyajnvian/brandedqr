@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Editor noise
+.vscode/
+.idea/
+
+# Landing-page assets — these belong to the separate BrandedQR web project,
+# not the extension. The extension loads only sidebar.html.
+index.html
+script.js
+style.css
+favicon.ico
+favicon.svg
+favicon-16.svg
+thumbnail.png
+thumbnail.svg
+icon.png

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandedQR - QR Code Generator</title>
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+    <main class="sidebar-container">
+        <header>
+            <h1>BrandedQR</h1>
+            <h2>QR Code Generator</h2>
+            <p>Generate QR codes with your logo</p>
+        </header>
+        
+        <section id="logoUploadContainer" class="logo-upload-container">
+            <h3>Add Your Brand Logo</h3>
+            <p>Upload once, use forever</p>
+            
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <p>Drag & drop your logo here or <span class="browse-link">browse files</span></p>
+                <input type="file" id="logoInput" accept="image/*" hidden>
+            </div>
+            
+            <div id="logoPreview" class="logo-preview" style="display: none;">
+                <img id="previewImage" src="" alt="Brand logo preview">
+                <button id="removeLogo" class="remove-logo">✕</button>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="continueBtn" class="primary-btn" style="display: none;">Continue to QR Generator</button>
+                <button id="skipLogoBtn" class="skip-btn">Skip - Use Without Logo</button>
+            </div>
+        </section>
+        
+        <section class="input-section" style="display: none;">
+            <div id="currentLogo" class="current-logo" style="display: none;">
+                <img id="currentLogoImg" src="" alt="Current brand logo">
+                <button id="changeLogoBtn" class="change-logo-btn">Change Logo</button>
+            </div>
+            
+            <input type="text" id="textInput" placeholder="Enter URL, email, phone, WiFi, or text..." required>
+            <button id="createQRBtn" class="primary-btn">Create QR Code</button>
+        </section>
+        
+        <section id="generationContainer" class="generation-container" style="display: none;">
+            <div class="generation-content">
+                <h3>Creating Your QR Code</h3>
+                <p id="detectionInfo" class="detection-info"></p>
+                
+                <div class="qr-generation-area">
+                    <div id="qrGenerationProgress" class="qr-progress">
+                        <div class="qr-grid" id="qrGrid"></div>
+                        <div class="qr-overlay" id="qrOverlay">
+                            <div class="generation-spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar-container">
+                            <div id="progressBar" class="progress-bar"></div>
+                        </div>
+                        <p class="progress-text" id="progressText">Initializing generation...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resultsContainer" class="results-container" style="display: none;">
+            <div class="results-content">
+                <h3>Your QR Code is Ready!</h3>
+                <div id="qrcode" class="qr-code"></div>
+                <a id="downloadLink" href="#" download="brandedqr.png" class="download-btn">Download QR Code</a>
+            </div>
+        </section>
+    </main>
+    
+    <script src="qrious.min.js"></script>
+    <script src="sidebar.js"></script>
+</body>
+</html>
